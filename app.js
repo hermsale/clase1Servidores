@@ -77,11 +77,12 @@ class Mueble{
     }
    
     mostrarPatas(){
+        // va this porque nos estamos refiriendo al mismo objeto que instanciamos 
         if(this.patas===0){
             // return(console.log("no tiene patas"));
             return ("no tiene patas");
         }else{
-            // return(console.log(`tiene ${patas} patas`));
+            // colocamos this porque nos referimos al mismo objeto instanciado 
             return (`tiene ${this.patas} patas`);
         }
     }
