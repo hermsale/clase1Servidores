@@ -10,7 +10,7 @@
 
 
 class Figuras{
-    constructor(alto, ancho, color){
+    constructor(alto=0, ancho=0, color="negro"){
         this.alto = alto;
         this.ancho = ancho;
         this.color = color;
@@ -50,3 +50,44 @@ const rectangulo = new Figuras(10,50,"verde");
 // le paso el parametro de la multiplicacion del ancho
 console.log(rectangulo.tomarAncho(4));
 console.log(rectangulo.tomarColor());
+
+console.log(typeof rectangulo.alto); // nos muestra el tipo 
+
+// HERENCIA 
+// creo una herencia de Figuras 
+class Circulo extends Figuras{
+    constructor(circunferencia){
+        super(20,40,"azul"); // la propiedad super, trae las propiedades de Figuras 
+        this.circunferencia = circunferencia;
+    }
+}
+
+const circulo1 = new Circulo(40);
+
+console.log(circulo1.circunferencia);
+
+////////////////////////////////////////////////////////////////////////////////////
+// ejercicio 2
+
+class Mueble{
+    constructor(material,patas,peso){
+        this.material = material;
+        this.patas = patas;
+        this.peso = peso;
+    }
+   
+    mostrarPatas(){
+        if(this.patas===0){
+            // return(console.log("no tiene patas"));
+            return ("no tiene patas");
+        }else{
+            // return(console.log(`tiene ${patas} patas`));
+            return (`tiene ${this.patas} patas`);
+        }
+    }
+
+}
+
+const mesa = new Mueble("pino",4,300);
+
+console.log(mesa.mostrarPatas());
