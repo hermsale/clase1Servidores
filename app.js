@@ -69,6 +69,11 @@ console.log(circulo1.circunferencia);
 ////////////////////////////////////////////////////////////////////////////////////
 // ejercicio 2
 
+let nombreMueble = document.querySelector("#nombreMueble");
+let pesoMueble = document.querySelector("#pesoMueble");
+let cantidadPatas = document.querySelector("#cantidadPatas");
+let btn_mueble = document.querySelector("#btn_mueble");
+
 class Mueble{
     constructor(material,patas,peso){
         this.material = material;
@@ -87,8 +92,23 @@ class Mueble{
         }
     }
 
+    controlPeso(){
+        if(this.peso>15){
+            return("Necesita llevar flete");
+        }else
+        {
+            return("Puede llevarlo por si mismo");
+        }
+    }
+
 }
 
-const mesa = new Mueble("pino",4,300);
+btn_mueble.addEventListener("click",function(){
+    const mesa = new Mueble(nombreMueble.value,cantidadPatas.value,pesoMueble);
+    console.log(nombreMueble.value);
+    console.log(mesa.mostrarPatas());
+    console.log(mesa.controlPeso());
+})
 
-console.log(mesa.mostrarPatas());
+
+
